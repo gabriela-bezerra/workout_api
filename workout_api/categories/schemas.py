@@ -1,9 +1,10 @@
-from workout_api.contrib.schemas import BaseSchema
-from pydantic import Field, PositiveFloat
 from typing import Annotated
+
+from pydantic import UUID4, Field
+from workout_api.contrib.schemas import BaseSchema
 
 
 class Category(BaseSchema):
     name: Annotated[
-        str, Field(description="Category's name", examples="Scale", max_length=10)
+        str, Field(description="Category's name", example="Scale", max_length=10)
     ]
